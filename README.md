@@ -13,8 +13,8 @@ farm $CAKE, you probably sell $CAKE right away once you received it as you have 
 
 So instead of giving out reward tokens right away, a protocol could issue the right to buy reward tokens at discount (a.k.a Call Option) to liquidity miners. 
 Assuming $CAKE is trading at $15. Let's say liquidity miners mined 1,000 $CAKE, instead of giving 1,000 $CAKE for free, now they would receive the right to 
-buy $CAKE@$7.5. They will still be incentivised to be liquidity providers as they still make profit from exercise the call option, but protocol will also earn 
-revenue from doing so. The revenue that protocol made from exercising Call Option then can be used as liquidity provision, buyback treasury, market making, etc.
+buy $CAKE@$7.5. They will still be incentivised to be liquidity providers as they still make profit from exercise the call option. The protocol will also earn 
+revenue from liquidity miners exercised their Call Option. This revenue then can be used as liquidity provision, buyback&burn treasury, market making, etc.
 
 We do belive that switching from traditional MasterChef to OptionChef would decrease selling pressure from liquidity mining program, better price discovery, and 
 additional source of income for the Gov token holders, while still create a fair distribution of tokens.
