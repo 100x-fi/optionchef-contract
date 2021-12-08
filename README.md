@@ -1,46 +1,28 @@
-# Advanced Sample Hardhat Project
+# OptionChef 👨‍🍳
 
-This project demonstrates an advanced Hardhat use case, integrating other tools commonly used alongside Hardhat in the ecosystem.
+OptionChef is a variant of MasterChef where we applied "Call Option" to liquidity mining program.
 
-The project comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts. It also comes with a variety of other tools, preconfigured to work with the project code.
+### Why?
 
-Try running some of the following tasks:
+It is crystal clear that protocols with on-going incentives (a.k.a liquidity mining) face with constants selling pressure and struggle 
+to discover the floor price of their tokens. This also harms traders who just want to buy tokens from the open market due to continuos selling 
+pressure from token emission. We do believe this is the problem of giving away something for nothing. For example, if you provide BUSD + USDT to 
+farm $CAKE, you probably sell $CAKE right away once you received it as you have ZERO cost of acquiring $CAKE. Just provide liquidity, get rewarded, simple.
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-npx hardhat help
-REPORT_GAS=true npx hardhat test
-npx hardhat coverage
-npx hardhat run scripts/deploy.ts
-TS_NODE_FILES=true npx ts-node scripts/deploy.ts
-npx eslint '**/*.{js,ts}'
-npx eslint '**/*.{js,ts}' --fix
-npx prettier '**/*.{json,sol,md}' --check
-npx prettier '**/*.{json,sol,md}' --write
-npx solhint 'contracts/**/*.sol'
-npx solhint 'contracts/**/*.sol' --fix
-```
+### Apply "Call Option" to liquidity mining program
 
-# Etherscan verification
+So instead of giving out reward tokens right away, a protocol could issue the right to buy reward tokens at discount (a.k.a Call Option) to liquidity miners. 
+Assuming $CAKE is trading at $15. Let's say liquidity miners mined 1,000 $CAKE, instead of giving 1,000 $CAKE for free, now they would receive the right to 
+buy $CAKE@$7.5. They will still be incentivised to be liquidity providers as they still make profit from exercise the call option, but protocol will also earn 
+revenue from doing so. The revenue that protocol made from exercising Call Option then can be used as liquidity provision, buyback treasury, market making, etc.
 
-To try out Etherscan verification, you first need to deploy a contract to an Ethereum network that's supported by Etherscan, such as Ropsten.
+We do belive that switching from traditional MasterChef to OptionChef would decrease selling pressure from liquidity mining program, better price discovery, and 
+additional source of income for the Gov token holders, while still create a fair distribution of tokens.
 
-In this project, copy the .env.example file to a file named .env, and then edit it to fill in the details. Enter your Etherscan API key, your Ropsten node URL (eg from Alchemy), and the private key of the account which will send the deployment transaction. With a valid .env file in place, first deploy your contract:
+### Audits and Security
 
-```shell
-hardhat run --network ropsten scripts/sample-script.ts
-```
+OptionChef contracts have NOT been audited, use at your own risk.
 
-Then, copy the deployment address and paste it in to replace `DEPLOYED_CONTRACT_ADDRESS` in this command:
+### License
 
-```shell
-npx hardhat verify --network ropsten DEPLOYED_CONTRACT_ADDRESS "Hello, Hardhat!"
-```
-
-# Performance optimizations
-
-For faster runs of your tests and scripts, consider skipping ts-node's type checking by setting the environment variable `TS_NODE_TRANSPILE_ONLY` to `1` in hardhat's environment. For more details see [the documentation](https://hardhat.org/guides/typescript.html#performance-optimizations).
+[MIT License](https://opensource.org/licenses/MIT)
